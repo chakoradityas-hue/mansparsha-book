@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#21170f">
+  <title>Mansparsha — Read, Feel, Remember</title>
+  <meta name="description" content="Read Mansparsha and share what its words mean to you.">
+  <style>
+    :root { --ink:#f6ead8; --muted:#c4b29b; --gold:#d6ad73; --panel:rgba(28,20,14,.88); --line:rgba(230,195,145,.22); }
+    * { box-sizing:border-box; }
+    body {
+      margin:0; color:var(--ink); font-family:Georgia,"Times New Roman",serif;
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(170,112,53,.22), transparent 48%),
+        repeating-linear-gradient(92deg, rgba(255,255,255,.018) 0 2px, transparent 2px 7px),
+        linear-gradient(135deg,#332217,#160f0b 62%,#24170f);
+      min-height:100vh;
+    }
+    body:before { content:""; position:fixed; inset:0; pointer-events:none; opacity:.23;
+      background:radial-gradient(ellipse at 12% 15%,transparent 0 12%,rgba(0,0,0,.6) 62%),
+      linear-gradient(120deg,transparent 0 48%,rgba(0,0,0,.18) 49% 50%,transparent 51%); }
+    .wrap { width:min(1060px,92vw); margin:auto; padding:32px 0 54px; position:relative; }
+    header { text-align:center; padding:18px 0 24px; }
+    .eyebrow { text-transform:uppercase; letter-spacing:.28em; font:11px Arial,sans-serif; color:var(--gold); }
+    h1 { font-size:clamp(36px,7vw,66px); font-weight:normal; margin:12px 0 8px; letter-spacing:.02em; }
+    .subtitle { color:var(--muted); font-style:italic; font-size:17px; margin:0; }
+    .ornament { color:var(--gold); letter-spacing:.6em; margin:20px 0 0; }
+    .book-frame { background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(0,0,0,.14)); padding:12px; border:1px solid var(--line); border-radius:7px; box-shadow:0 28px 65px #0009; }
+    .book-frame iframe { display:block; width:100%; height:min(72vh,760px); min-height:420px; border:0; background:#17100b; }
+    .caption { text-align:center; color:var(--muted); font:12px Arial,sans-serif; margin:13px 0 0; }
+    .section { margin-top:30px; background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:clamp(18px,4vw,30px); box-shadow:0 15px 40px #0005; }
+    .section h2 { font-weight:normal; font-size:clamp(24px,4vw,34px); margin:0 0 8px; }
+    .intro { color:var(--muted); line-height:1.6; margin:0 0 22px; }
+    .actions { display:flex; flex-wrap:wrap; align-items:center; gap:12px; }
+    button { cursor:pointer; border:1px solid #bd925c; background:linear-gradient(#dfbb83,#b9864e); color:#21150d; padding:12px 18px; border-radius:4px; font-weight:bold; font-size:15px; }
+    button:disabled { opacity:.55; cursor:wait; }
+    .like-btn { min-width:160px; font-family:Arial,sans-serif; }
+    .like-btn.liked { background:#6b2c2c; border-color:#a75a54; color:#fff0e7; }
+    .count { color:var(--muted); font:14px Arial,sans-serif; }
+    .status { min-height:20px; margin-top:12px; color:#e6c99c; font:13px Arial,sans-serif; }
+    .review-grid { display:grid; grid-template-columns:1fr 1fr; gap:26px; }
+    label { display:block; margin:13px 0 7px; color:#e4cfb2; font-size:14px; }
+    input,textarea,select { width:100%; background:#100c09; border:1px solid #725638; color:var(--ink); border-radius:4px; padding:12px; font:15px Arial,sans-serif; }
+    textarea { min-height:120px; resize:vertical; }
+    .stars { display:flex; gap:5px; margin:7px 0 10px; }
+    .star { border:0; padding:3px 5px; font-size:30px; background:none; color:#76634a; }
+    .star.selected { color:#e8bc65; }
+    .review { padding:16px 0; border-top:1px solid var(--line); }
+    .review:first-child { border-top:0; }
+    .review-title { display:flex; justify-content:space-between; gap:10px; align-items:baseline; }
+    .review-name { font-weight:bold; color:#f5dfbd; }
+    .review-stars { color:#e8bc65; white-space:nowrap; letter-spacing:1px; }
+    .review-date { color:#9d8b75; font:11px Arial,sans-serif; margin-top:5px; }
+    .review-text { color:#ded0bd; line-height:1.65; white-space:pre-wrap; overflow-wrap:anywhere; }
+    .empty { color:#a9957b; font-style:italic; padding:12px 0; }
+    footer { text-align:center; color:#a38e73; font:12px Arial,sans-serif; padding:28px 10px 0; line-height:1.7; }
+    .small { color:#a9957b; font:12px/1.6 Arial,sans-serif; }
+    @media(max-width:700px) { .review-grid {grid-template-columns:1fr;} .book-frame iframe {min-height:440px;height:66vh;} .wrap{width:94vw;padding-top:16px;} }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="eyebrow">A book to feel, not just read</div>
+      <h1>मनस्पर्शी</h1>
+      <p class="subtitle">Some feelings find their home in words.</p>
+      <div class="ornament">✦ ✧ ✦</div>
+    </header>
+
+    <section class="book-frame" aria-label="Digital book">
+      <iframe src="https://heyzine.com/flip-book/4e7d9baeba.html" title="Read the Mansparsha digital book" allowfullscreen loading="lazy"></iframe>
+    </section>
+    <p class="caption">Turn the pages slowly. Stay where a line speaks to you.</p>
+
+    <section class="section">
+      <h2>Did these words reach you?</h2>
+      <p class="intro">If this book made you pause, remember something, or feel understood, leave a little sign for the author.</p>
+      <div class="actions">
+        <button class="like-btn" id="likeBtn" disabled>♡ Like this book</button>
+        <span class="count" id="likeCount">Loading likes…</span>
+      </div>
+      <div class="status" id="likeStatus" role="status"></div>
+    </section>
+
+    <section class="section">
+      <h2>Reader's corner</h2>
+      <p class="intro">Rate the book and share the poem, thought, or feeling that stayed with you. Reviews are checked before they appear publicly.</p>
+      <div class="review-grid">
+        <form id="reviewForm">
+          <label for="readerName">Your name or nickname</label>
+          <input id="readerName" maxlength="50" required placeholder="What should we call you?">
+          <label>Your rating</label>
+          <div class="stars" id="starPicker" aria-label="Choose a star rating">
+            <button type="button" class="star selected" data-rating="1" aria-label="1 star">★</button>
+            <button type="button" class="star" data-rating="2" aria-label="2 stars">★</button>
+            <button type="button" class="star" data-rating="3" aria-label="3 stars">★</button>
+            <button type="button" class="star" data-rating="4" aria-label="4 stars">★</button>
+            <button type="button" class="star" data-rating="5" aria-label="5 stars">★</button>
+          </div>
+          <label for="reviewText">Your review</label>
+          <textarea id="reviewText" minlength="3" maxlength="2000" required placeholder="Write what you felt…"></textarea>
+          <p class="small">Please keep it respectful. Your review will appear after approval.</p>
+          <button id="submitReview" type="submit">Send my review</button>
+          <div class="status" id="reviewStatus" role="status"></div>
+        </form>
+        <div>
+          <h3 style="font-weight:normal;margin:8px 0 12px">Words from readers</h3>
+          <div id="reviewsList"><p class="empty">Loading reader reviews…</p></div>
+        </div>
+      </div>
+    </section>
+    <footer>Made with care for readers and words.<br>Only approved reviews are displayed publicly.</footer>
+  </main>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+    import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+    import {
+      getFirestore, collection, doc, setDoc, getDoc, getDocs, query, where,
+      onSnapshot, serverTimestamp, orderBy, limit
+    } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyB1vcQSjUvToxf5_4ISn0HYuChU14Kq1p0",
+      authDomain: "mansparsha-book.firebaseapp.com",
+      projectId: "mansparsha-book",
+      storageBucket: "mansparsha-book.firebasestorage.app",
+      messagingSenderId: "790696331130",
+      appId: "1:790696331130:web:0d84fe40a3ef61a68e38c3",
+      measurementId: "G-ZWXTF78R2R"
+    };
+
+    const BOOK_ID = "mansparsha";
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+    const likeBtn = document.getElementById("likeBtn");
+    const likeCount = document.getElementById("likeCount");
+    const likeStatus = document.getElementById("likeStatus");
+    const reviewStatus = document.getElementById("reviewStatus");
+    const reviewForm = document.getElementById("reviewForm");
+    const submitReview = document.getElementById("submitReview");
+    const reviewsList = document.getElementById("reviewsList");
+    let currentUser = null;
+    let selectedRating = 1;
+    let alreadyLiked = false;
+
+    const likesRef = collection(db, "books", BOOK_ID, "likes");
+    const reviewsRef = collection(db, "books", BOOK_ID, "reviews");
+
+    function setStatus(el, message) { el.textContent = message; }
+    function setRating(value) {
+      selectedRating = value;
+      document.querySelectorAll(".star").forEach(btn => {
+        const selected = Number(btn.dataset.rating) <= value;
+        btn.classList.toggle("selected", selected);
+        btn.setAttribute("aria-pressed", String(Number(btn.dataset.rating) === value));
+      });
+    }
+    document.querySelectorAll(".star").forEach(btn => btn.addEventListener("click", () => setRating(Number(btn.dataset.rating))));
+
+    onSnapshot(likesRef, snap => {
+      likeCount.textContent = `${snap.size} ${snap.size === 1 ? "like" : "likes"}`;
+    }, err => {
+      likeCount.textContent = "Likes unavailable";
+      setStatus(likeStatus, "Could not load likes. Check Firestore rules and setup.");
+      console.error(err);
+    });
+
+    likeBtn.addEventListener("click", async () => {
+      if (!currentUser || alreadyLiked) return;
+      likeBtn.disabled = true;
+      try {
+        await setDoc(doc(db, "books", BOOK_ID, "likes", currentUser.uid), {
+          createdAt: serverTimestamp()
+        });
+        alreadyLiked = true;
+        likeBtn.classList.add("liked");
+        likeBtn.textContent = "♥ Liked";
+        setStatus(likeStatus, "Thanks for leaving a little heart.");
+      } catch (err) {
+        console.error(err);
+        setStatus(likeStatus, "Your like couldn't be saved. Please try again later.");
+        likeBtn.disabled = false;
+      }
+    });
+
+    onAuthStateChanged(auth, async user => {
+      if (!user) return;
+      currentUser = user;
+      try {
+        const ownLike = await getDoc(doc(db, "books", BOOK_ID, "likes", user.uid));
+        alreadyLiked = ownLike.exists();
+        likeBtn.disabled = alreadyLiked;
+        likeBtn.classList.toggle("liked", alreadyLiked);
+        likeBtn.textContent = alreadyLiked ? "♥ Liked" : "♡ Like this book";
+      } catch (err) {
+        console.error(err);
+        likeBtn.disabled = false;
+      }
+    });
+
+    signInAnonymously(auth).catch(err => {
+      console.error(err);
+      setStatus(likeStatus, "Reader session couldn't start. Check that Anonymous sign-in is enabled.");
+    });
+
+    reviewForm.addEventListener("submit", async event => {
+      event.preventDefault();
+      if (!currentUser) {
+        setStatus(reviewStatus, "Please wait a moment and try again.");
+        return;
+      }
+      const name = document.getElementById("readerName").value.trim();
+      const text = document.getElementById("reviewText").value.trim();
+      if (name.length < 1 || text.length < 3) {
+        setStatus(reviewStatus, "Please add a name and a review.");
+        return;
+      }
+      submitReview.disabled = true;
+      try {
+        await setDoc(doc(reviewsRef), {
+          uid: currentUser.uid,
+          name,
+          rating: selectedRating,
+          text,
+          approved: false,
+          createdAt: serverTimestamp()
+        });
+        reviewForm.reset();
+        setRating(1);
+        setStatus(reviewStatus, "Thank you! Your review was sent for approval.");
+      } catch (err) {
+        console.error(err);
+        setStatus(reviewStatus, "Review couldn't be submitted. Check Firestore rules and try again.");
+      } finally {
+        submitReview.disabled = false;
+      }
+    });
+
+    function escapeText(value) {
+      return String(value).replace(/[&<>"']/g, ch => ({
+        "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;"
+      }[ch]));
+    }
+    onSnapshot(query(reviewsRef, where("approved", "==", true), orderBy("createdAt", "desc"), limit(30)), snap => {
+      if (snap.empty) {
+        reviewsList.innerHTML = '<p class="empty">Your words could be the first here.</p>';
+        return;
+      }
+      reviewsList.innerHTML = snap.docs.map(d => {
+        const r = d.data();
+        const stars = "★".repeat(Math.max(0, Math.min(5, Number(r.rating) || 0))) + "☆".repeat(5 - Math.max(0, Math.min(5, Number(r.rating) || 0)));
+        const date = r.createdAt?.toDate ? r.createdAt.toDate().toLocaleDateString(undefined, {year:"numeric",month:"short",day:"numeric"}) : "Recently";
+        return `<article class="review">
+          <div class="review-title"><span class="review-name">${escapeText(r.name || "Reader")}</span><span class="review-stars">${stars}</span></div>
+          <p class="review-text">${escapeText(r.text || "")}</p>
+          <div class="review-date">${escapeText(date)}</div>
+        </article>`;
+      }).join("");
+    }, err => {
+      console.error(err);
+      reviewsList.innerHTML = '<p class="empty">Reviews are temporarily unavailable.</p>';
+    });
+  </script>
+</body>
+</html>
