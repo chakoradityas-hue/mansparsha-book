@@ -244,7 +244,7 @@
         "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;"
       }[ch]));
     }
-    onSnapshot(query(reviewsRef, where("approved", "==", true), orderBy("createdAt", "desc"), limit(30)), snap => {
+    onSnapshot(query(reviewsRef, where("approved", "==", true), limit(30)), snap => {
       if (snap.empty) {
         reviewsList.innerHTML = '<p class="empty">Your words could be the first here.</p>';
         return;
